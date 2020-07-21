@@ -1,0 +1,77 @@
+.title {
+  color: #000000;
+  text-align: center;
+}
+
+.Input {
+  text-align: center;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  width: 350px;
+  margin-left:auto;margin-right:auto;
+  text-align: center;
+  color: #000000;/*文字色*/
+  background: #FFFFEE;
+  border: solid 3px #99CC99;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+.Input p{
+  display: inline-block;
+  text-align: left;
+  font-size:20px;
+  margin: 0;
+  padding: 0;
+}
+#output_message{
+  font-size:18px;
+}
+
+#hint_message{
+  display: inline-block;
+  text-align: left;
+  font-size:15px;
+}
+
+#button {
+  font-size: 25px;
+}
+
+ul.tab_test{
+ margin:0;
+text-align: center;
+}
+.tab_test li{
+ border:1px solid #99CC99;
+ padding-left: 10px;
+ width:190px;
+ height:50px;
+ line-height: 50px;
+ font-size:23px;
+ text-align: center;
+ border-bottom-color:transparent;
+display:inline-block;
+background:#009966;
+color:#fff;
+}
+
+.tab_test li.Active{
+ background:#CCFFCC;
+color:#000;
+}
+.tab_cnt{
+ border:1px solid #99CC99;
+padding:50px;
+ margin-top:-1px;
+ overflow:hidden;
+ background:#CCFFCC;
+ width:700px;
+ margin-left:auto;margin-right:auto;
+}
+.tab_cnt div{
+ display:none;
+
+}
+.tab_cnt div.Active{
+ display:block;
+}
