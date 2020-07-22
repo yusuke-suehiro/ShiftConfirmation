@@ -17,7 +17,15 @@
     <div id="tab1_cnt" class="Active">
     <a href="./file/20200702_suehiro.pdf" download="20200702_suehiro.pdf">PDFファイル</a>
     </div>
-    <div id="tab2_cnt" class="NonActive">タブ２のコンテンツです。</div>
+    <div id="tab2_cnt" class="NonActive">
+    <input type="file" name="test" accept=".pdf" required >
+    <p>提出用パスワード<br>
+    <input type="password" id="passw" value=""><br></p>
+    <input type="button" id="buttonpdf" onclick="func2()" value="完了">
+    <div id="output_message2"></div>
+
+    </div>
+
 
     <script src="main.js" defer></script>
   </body>

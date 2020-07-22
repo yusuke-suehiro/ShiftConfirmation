@@ -2,6 +2,7 @@ document.bgColor = "#FFFFEE";  //webの背景色を変更
 
 let CrewCode=['HF727','EA283'];
 let CrewName=['末廣勇祐','松下海'];
+var UpLoadPass='09366390';
 
 var Flag = 0;
 var CrewNumber = 0;
@@ -44,6 +45,18 @@ function func1() {
     }
   }
 
+function func2() {
+  var passw = document.getElementById("passw").value;
+
+  if (passw === UpLoadPass) {
+    passw = "<br>正解！";
+    document.getElementById("output_message2").innerHTML = passw;
+  }
+  else {
+    pass = "<br>入力された内容は誤っています<br>もう一度入力してください";
+    document.getElementById("output_message2").innerHTML = passw;
+  }
+}
 
   //ホーム
   NonActive[0].onclick = function() {
@@ -53,9 +66,7 @@ function func1() {
   Active[0].style.backgroundColor=NonActiveBackColor;
   NonActive[1].style.display="block";
   Active[1].style.display="none";
-
   }
-
   //メニュー
   Active[0].onclick = function() {
   NonActive[0].style.color=NonActiveColor;
