@@ -33,7 +33,7 @@ function func1() {
     if (Flag == 1) {
       input_message = "";
       document.getElementById("hint_message").innerHTML = input_message;
-      window.location.href = "ScheduleManagement2.html";
+      window.location.href = "index2.html";
     }
     else {
       input_message = "<br>入力された内容は誤っています<br>もう一度入力してください";
@@ -46,15 +46,22 @@ function func1() {
   }
 
 function func2() {
-  var passw = document.getElementById("passw").value;
+  var input_message = document.getElementById("input_message").value;
+    if (UpLoadPass === input_message) {
+        Flag=1;
+        input_message = "<br>認証完了<br>しばらくお待ちください";
+    }
+  if (Flag == 1) {
+    input_message = "正解!";
+    document.getElementById("hint_message").innerHTML = input_message;
 
-  if (passw === UpLoadPass) {
-    passw = "<br>正解！";
-    document.getElementById("output_message2").innerHTML = passw;
   }
   else {
-    pass = "<br>入力された内容は誤っています<br>もう一度入力してください";
-    document.getElementById("output_message2").innerHTML = passw;
+
+    input_message = "<br><br>ヒント<br>・英字や数字は半角で入力していますか？<br>・大文字と小文字は正確ですか？";
+    document.getElementById("hint_message").innerHTML = input_message;
+    Flag=0;
+    CrewNumber = 0;
   }
 }
 
