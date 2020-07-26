@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>従業員限定ページ</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.2/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
 
   </head>
   <body>
 
     <h1 class="title">ようこそ！</h1>
+    <div id="message"></div>
 
     <form id="form1" action="#">
     <ul class="tab_test">
@@ -18,12 +21,24 @@
     <div class="tab_cnt">
     <div id="tab1_cnt" class="Active">
     <a href="./file/20200702_suehiro.pdf" download="20200702_suehiro.pdf">PDFファイル</a>
+    <p>OKマーク用フォーム<br>氏名</p>
+    <input type="text" id="input_message_name" value=""></p>
+    <input type="checkbox" id="Monday" value="Monday">月曜日<br>
+    <input type="checkbox" id="Tuesday" value="Tuesday">火曜日<br>
+    <input type="checkbox" id="Wednesday" value="Wednesday">水曜日<br>
+    <input type="checkbox" id="Thursday" value="Thursday">木曜日<br>
+    <input type="checkbox" id="Friday" value="Friday">金曜日<br>
+    <input type="checkbox" id="Saturday" value="Saturday">土曜日<br>
+    <input type="checkbox" id="Sunday" value="Sunday">日曜日<br>
+    <input type="button" id="button" onclick="func4()" value="完了">
+    <div id="hint_message"></div>
     </div>
     <div id="tab2_cnt" class="NonActive">
 
       <input type="file" name="test" accept=".pdf" required>
       <br><br>
       <p>アップロード用パスワード<br>
+
       <input type="password" id="input_message" value=""><br></p>
       <br><br>
       <input type="button" id="button" onclick="func2()" value="完了">
