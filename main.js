@@ -5,6 +5,7 @@ let CrewName=['末廣勇祐','松下海'];
 
 
 var UpLoadPass='09366390';
+//var UpLoadPass="";開発時のみ使用
 
 var Flag = 0;
 var CrewNumber=0;
@@ -49,20 +50,18 @@ function func1() {
   }
 
 function func2() {
-  var input_message = document.getElementById("input_message").value;
-    if (UpLoadPass === input_message) {
-        Flag=1;
-        input_message = "<br>認証完了<br>しばらくお待ちください";
-    }
-  if (Flag == 1) {
-    input_message = Nowname + "さん　正解!";
-    document.getElementById("hint_message").innerHTML = input_message;
 
+  var input_message = document.getElementById("input_message").value;
+  var result_ = document.getElementsByClassName("result_output")[0];
+
+  if (UpLoadPass === input_message) {
+    console.log("認証成功")
+    result_.textContent = Nowname + "さん　正解!";
+    document.getElementsByClassName("hint_message")[0].innerHTML = "";
   }
   else {
-
-    input_message = "<br><br>ヒント<br>・英字や数字は半角で入力していますか？<br>・大文字と小文字は正確ですか？";
-    document.getElementById("hint_message").innerHTML = input_message;
+    result_.textContent = Nowname + "さん　失敗!";
+    document.getElementsByClassName("hint_message")[0].innerHTML = "<br>ヒント<br>・英字や数字は半角で入力していますか？<br>・大文字と小文字は正確ですか？";
     Flag=0;
   }
 }
