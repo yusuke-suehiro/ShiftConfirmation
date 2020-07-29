@@ -36,7 +36,7 @@ function func1() {
     if (Flag == 1) {
       input_message = "";
       document.getElementById("hint_message").innerHTML = input_message;
-      window.location.href = "index2.html";
+      window.location.href = "index2.php";
 
     }
     else {
@@ -77,6 +77,9 @@ function func3() {
   var Sunday = document.getElementById("Sunday").value;
 }
 
+
+
+//ここから下はtxtファイルを編集する関数を作成中
 
   // SheetをWorkbookに追加する
   // 参照：https://github.com/SheetJS/js-xlsx/issues/163
@@ -191,8 +194,8 @@ function func3() {
 
 
 
-
-  //ホーム
+//タブの操作
+  //クルー専用
   NonActive[0].onclick = function() {
   NonActive[0].style.color=ActiveColor;
   NonActive[0].style.backgroundColor=ActiveBackColor;
@@ -201,7 +204,7 @@ function func3() {
   NonActive[1].style.display="block";
   Active[1].style.display="none";
   }
-  //メニュー
+  //責任者専用
   Active[0].onclick = function() {
   NonActive[0].style.color=NonActiveColor;
   NonActive[0].style.backgroundColor=NonActiveBackColor;
