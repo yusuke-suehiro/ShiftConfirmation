@@ -22,9 +22,9 @@
     <div id="tab1_cnt" class="Active">
     <a href="./file/20200702_suehiro.pdf" download="20200702_suehiro.pdf">PDFファイル</a>
     <p>OKマーク用フォーム<br>氏名</p>
-    <?php
+
     echo 'include1<br>';
-    ?>
+    
     <input type="text" id="input_message_name" value=""></p>
     <input type="checkbox" id="Monday" value="Monday">月曜日<br>
     <input type="checkbox" id="Tuesday" value="Tuesday">火曜日<br>
