@@ -25,7 +25,7 @@
     <?php
     echo 'include1<br>';
     //mysqlのホスト名はlocalhost，ユーザ作成時にはパスワードの書式？設定が必要
-    $link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'shop');
+    $link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'ShiftConfirmation');
 //  $link = mysqli_connect('localhost', 'SUEHIRO', '44461016', 'shop');
 
     if (mysqli_connect_errno()) {
@@ -34,6 +34,35 @@
     echo "データベースの接続に成功しました。\n";
 }
     ?>
+    <?php
+    if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error']) && $_FILES["upfile"]["name"] !== ""){
+      //NULLならFALSE,
+                //エラーチェック
+                switch ($_FILES['upfile']['error']) {
+                    case UPLOAD_ERR_OK: // OK
+                        break;
+                    case UPLOAD_ERR_NO_FILE:   // 未選択
+                        throw new RuntimeException('ファイルが選択されていません', 400);
+                    case UPLOAD_ERR_INI_SIZE:  // php.ini定義の最大サイズ超過
+                        throw new RuntimeException('ファイルサイズが大きすぎます', 400);
+                    default:
+                        throw new RuntimeException('その他のエラーが発生しました', 500);
+                }
+                echo "OK\n";
+              }
+    ?>
+
+
+    <form action="index2.php" enctype="multipart/form-data" method="post">
+        <label>画像/動画アップロード</label>
+        <input type="file" name="upfile">
+        <br>
+
+        <input type="submit" value="アップロード">
+    </form>
+
+
+
     <input type="text" id="input_message_name" value=""></p>
     <input type="checkbox" id="Monday" value="Monday">月曜日<br>
     <input type="checkbox" id="Tuesday" value="Tuesday">火曜日<br>
