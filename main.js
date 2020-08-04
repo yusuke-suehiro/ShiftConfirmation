@@ -109,87 +109,27 @@ function func3() {
   // https://github.com/SheetJS/js-xlsx/blob/master/README.md#writing-options
   var input_message_name = document.getElementById("input_message_name").value;
 
-  var Monday = document.getElementById("Monday");
+/*  var Monday = document.getElementById("Monday");
   var Tuesday = document.getElementById("Tuesday");
   var Wednesday = document.getElementById("Wednesday");
   var Thursday = document.getElementById("Thursday");
   var Friday = document.getElementById("Friday");
   var Saturday = document.getElementById("Saturday");
-  var Sunday = document.getElementById("Sunday");
+  var Sunday = document.getElementById("Sunday");*/
   for (let num=0;num<CrewCode.length;num++) {
     if (CrewName[num] === input_message_name) {
       Flag=1;
       Nowname=CrewName[num];
       CrewNumber=num;
-      hint2_message = "<br>"+CrewName[CrewNumber]+"さん<br>しばらくお待ちください";
-  }
-  }
-  if (Flag == 1) {
-
-    var fs = WScript.CreateObject("Scripting.FileSystemObject");
-    var file = fs.OpenTextFile("text.txt", 2, true, -1);
-
-    file.Write("マルペケつくろ～");
-    file.Close();
-
-
-    /*let blob = new Blob(['\nあいうえお'],{type:"text/plan"});
-    let link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = '作ったファイル.txt';
-    link.click();*/
-
-}
-
-    /*var array1 =
-    [
-      [Nowname+"^n"+Nowname,"","","","","","",""]
-    ];
-    if (Monday.checked) {
-      array1[0][1]="OK";
-    }
-    if (Tuesday.checked) {
-      array1[0][2]="OK";
-    }
-    if (Wednesday.checked) {
-      array1[0][3]="OK";
-    }
-    if (Thursday.checked) {
-      array1[0][4]="OK";
-    }
-    if (Friday.checked) {
-      array1[0][5]="OK";
-    }
-    if (Saturday.checked) {
-      array1[0][6]="OK";
-    }
-    if (Sunday.checked) {
-      array1[0][7]="OK";
-    }
-    var write_opts = {
-      type: 'binary'
-    };
-
-    // ArrayをWorkbookに変換する
-    var wb = aoa_to_workbook(array1);
-    var wb_out = XLSX.write(wb, write_opts);
-
-    // WorkbookからBlobオブジェクトを生成
-    // 参照：https://developer.mozilla.org/ja/docs/Web/API/Blob
-    var blob = new Blob([s2ab(wb_out)], { type: 'application/octet-stream' });
-
-    // FileSaverのsaveAs関数で、xlsxファイルとしてダウンロード
-    // 参照：https://github.com/eligrey/FileSaver.js/
-    saveAs(blob, 'myExcelFile.xlsx');
-    hint2_message = "完了しました<br>ありがとうございます";
-    document.getElementById("hint_message").innerHTML = hint2_message;
+      input_message_name = "";
+      document.getElementById("hint_message").innerHTML = input_message_name;
   }
   else {
-    hint2_message = "名前が間違っています";
-    document.getElementById("hint_message").innerHTML = hint2_message;
+    console.log('Not!!\n');
   }
-*/
+  }
 }
+
 
 
 

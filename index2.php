@@ -22,44 +22,6 @@
     <div id="tab1_cnt" class="Active">
     <a href="./file/20200702_suehiro.pdf" download="20200702_suehiro.pdf">PDFファイル</a>
     <p>OKマーク用フォーム<br>氏名</p>
-    <?php
-    echo 'include1<br>';
-    //mysqlのホスト名はlocalhost，ユーザ作成時にはパスワードの書式？設定が必要
-    $link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'ShiftConfirmation');
-//  $link = mysqli_connect('localhost', 'SUEHIRO', '44461016', 'shop');
-
-    if (mysqli_connect_errno()) {
-    die("データベースに接続できません:" . mysqli_connect_error() . "\n");
-} else {
-    echo "データベースの接続に成功しました。\n";
-}
-    ?>
-    <?php
-    if (isset($_FILES['upfile']['error']) && is_int($_FILES['upfile']['error']) && $_FILES["upfile"]["name"] !== ""){
-      //NULLならFALSE,
-                //エラーチェック
-                switch ($_FILES['upfile']['error']) {
-                    case UPLOAD_ERR_OK: // OK
-                        break;
-                    case UPLOAD_ERR_NO_FILE:   // 未選択
-                        throw new RuntimeException('ファイルが選択されていません', 400);
-                    case UPLOAD_ERR_INI_SIZE:  // php.ini定義の最大サイズ超過
-                        throw new RuntimeException('ファイルサイズが大きすぎます', 400);
-                    default:
-                        throw new RuntimeException('その他のエラーが発生しました', 500);
-                }
-                echo "OK\n";
-              }
-    ?>
-
-
-    <form action="index2.php" enctype="multipart/form-data" method="post">
-        <label>画像/動画アップロード</label>
-        <input type="file" name="upfile">
-        <br>
-
-        <input type="submit" value="アップロード">
-    </form>
 
 
 
@@ -72,18 +34,43 @@
     <input type="checkbox" id="Saturday" value="Saturday">土曜日<br>
     <input type="checkbox" id="Sunday" value="Sunday">日曜日<br>
     <input type="button" id="button" onclick="func4()" value="完了">
-    <div id="hint_message"></div>
+
     </div>
 
     <div id="tab2_cnt" class="NonActive">
 
-      <input type="file" name="test" accept=".pdf" required>
-      <br><br>
-      <p>アップロード用パスワード<br>
+      <form action="index2.php" enctype="multipart/form-data" method="POST">
+          <label>画像/動画アップロード</label>
 
-      <input type="password" id="input_message" value=""><br></p>
-      <br><br>
-      <input type="button" id="button" onclick="func2()" value="完了">
+          <input type="file" name="fname" accept=".pdf" required>
+          <br>
+          <input type="submit" value="アップロード">
+
+      </form>
+
+      <?php
+      if (!empty($_FILES)) {//アップロードファイルがある時の処理
+          if(is_uploaded_file($_FILES["fname"]["tmp_name"])){
+
+            if(move_uploaded_file($_FILES["fname"]["tmp_name"], "/Users/suehiroyusuke/Documents/GitHub/ShiftConfirmation/".basename($_FILES['fname']['name']))){
+              echo "アップロード完了です。";
+            }else{
+              echo "アップロードに失敗しました。";
+            }
+
+          }
+
+          /*$uploaddir = '/Users/suehiroyusuke/Documents/GitHub/ShiftConfirmation/';
+          $upload = $uploaddir . basename($_FILES['fname']['name']);
+          move_uploaded_file($_FILES['fname']['tmp'], $upload);
+          echo "完了";
+      */
+      }
+      else {
+        echo "ファイルを選択してください";
+      }
+          ?>
+
 
       <br>
       <p class="result_output">結果</p>
