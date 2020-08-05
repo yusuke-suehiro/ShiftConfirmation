@@ -42,34 +42,22 @@
       <form action="index2.php" enctype="multipart/form-data" method="POST">
           <label>画像/動画アップロード</label>
 
-          <input type="file" name="fname" accept=".pdf" required>
+          <input type="file" name="upfile" accept=".pdf" required>
           <br>
           <input type="submit" value="アップロード">
 
       </form>
 
       <?php
-      if (!empty($_FILES)) {//アップロードファイルがある時の処理
-          if(is_uploaded_file($_FILES["fname"]["tmp_name"])){
-
-            if(move_uploaded_file($_FILES["fname"]["tmp_name"], "/Users/suehiroyusuke/Documents/GitHub/ShiftConfirmation/".basename($_FILES['fname']['name']))){
-              echo "アップロード完了です。";
-            }else{
-              echo "アップロードに失敗しました。";
-            }
-
-          }
-
-          /*$uploaddir = '/Users/suehiroyusuke/Documents/GitHub/ShiftConfirmation/';
-          $upload = $uploaddir . basename($_FILES['fname']['name']);
-          move_uploaded_file($_FILES['fname']['tmp'], $upload);
-          echo "完了";
-      */
-      }
-      else {
-        echo "ファイルを選択してください";
+      if (count($_POST) > 0){
+        $upfile = $_FILES["upfile"]["tmp_name"];
+      	if ($upfile==""){
+      		print("ファイルのアップロードができませんでした。<BR>");
+      		exit;
+	        }
       }
           ?>
+
 
 
       <br>
