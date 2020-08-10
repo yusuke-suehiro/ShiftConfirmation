@@ -25,38 +25,165 @@
 
 
 
-    <input type="text" id="input_message_name" value=""></p>
-    <input type="checkbox" id="Monday" value="Monday">月曜日<br>
-    <input type="checkbox" id="Tuesday" value="Tuesday">火曜日<br>
-    <input type="checkbox" id="Wednesday" value="Wednesday">水曜日<br>
-    <input type="checkbox" id="Thursday" value="Thursday">木曜日<br>
-    <input type="checkbox" id="Friday" value="Friday">金曜日<br>
-    <input type="checkbox" id="Saturday" value="Saturday">土曜日<br>
-    <input type="checkbox" id="Sunday" value="Sunday">日曜日<br>
-    <input type="button" id="button" onclick="func4()" value="完了">
+    <form action="index2.php"  method="get">
+      <p>月曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[0]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[0][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[0][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[0][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[0][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[0][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[0][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[0][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[0][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[0][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[0][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[0][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[0][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[0][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[0][]" value="23">23&emsp;
+      <p>火曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[1]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[1][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[1][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[1][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[1][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[1][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[1][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[1][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[1][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[1][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[1][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[1][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[1][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[1][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[1][]" value="23">23&emsp;
+      <p>水曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[2]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[2][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[2][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[2][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[2][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[2][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[2][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[2][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[2][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[2][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[2][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[2][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[2][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[2][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[2][]" value="23">23&emsp;
+      <p>木曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[3]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[3][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[3][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[3][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[3][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[3][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[3][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[3][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[3][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[3][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[3][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[3][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[3][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[3][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[3][]" value="23">23&emsp;
+      <p>金曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[4]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[4][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[4][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[4][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[4][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[4][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[4][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[4][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[4][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[4][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[4][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[4][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[4][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[4][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[4][]" value="23">23&emsp;
+      <p>土曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[5]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[5][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[5][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[5][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[5][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[5][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[5][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[5][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[5][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[5][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[5][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[5][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[5][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[5][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[5][]" value="23">23&emsp;
+      <p>日曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <input type="checkbox" name="holiday[6]">休み希望の時はこちらにチェックしてください<br><br>
+      <input type="checkbox" name="Times[6][]" value="10">10&emsp;
+      <input type="checkbox" name="Times[6][]" value="11">11&emsp;
+      <input type="checkbox" name="Times[6][]" value="12">12&emsp;
+      <input type="checkbox" name="Times[6][]" value="13">13&emsp;
+      <input type="checkbox" name="Times[6][]" value="14">14&emsp;
+      <input type="checkbox" name="Times[6][]" value="15">15&emsp;
+      <input type="checkbox" name="Times[6][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[6][]" value="17">17&emsp;
+      <input type="checkbox" name="Times[6][]" value="18">18&emsp;
+      <input type="checkbox" name="Times[6][]" value="19">19&emsp;
+      <input type="checkbox" name="Times[6][]" value="20">20&emsp;
+      <input type="checkbox" name="Times[6][]" value="21">21&emsp;
+      <input type="checkbox" name="Times[6][]" value="22">22&emsp;
+      <input type="checkbox" name="Times[6][]" value="23">23&emsp;
+
+      <input type="submit" value="送信">
+    </form>
+    <?php
+    $Times = $_GET["Times"];
+    $Holiday = $_GET["holiday"];
+    $YourSche =array("Name","id","Mon","Tue","Wed","Thu","Fri","Sat","Sun");
+
+    for ($day=0;$day<7;$day++) {
+      if ($Holiday[$day] == NULL) {
+        if ($Times[$day][2] !== NULL) {
+          echo "３つ以上チェックしないでください";
+        }
+        else {
+          if ($Times[$day][0] == NULL or $Times[$day][1] == NULL) {
+            echo "出勤できる時間を入力してください";
+          }
+          else {
+            //echo $Times[0][0].PHP_EOL;
+            //echo $Times[0][1].PHP_EOL;
+            $YourSche[$day+2]=$Times[$day][0].PHP_EOL."-- ".$Times[$day][1].PHP_EOL;
+            echo $YourSche[$day+2];
+          }
+        }
+      }
+      else {
+        if ($Times[$day][0] !== NULL ) {
+          echo "休み希望の時は時間を入力しないでください";
+        }
+        else {
+          $YourSche[$day+2]="O";
+          echo $YourSche[$day+2];
+        }
+      }
+}
+
+
+        ?>
+
 
     </div>
 
     <div id="tab2_cnt" class="NonActive">
 
-      <form action="index2.php" enctype="multipart/form-data" method="POST">
-          <label>画像/動画アップロード</label>
 
-          <input type="file" name="upfile" accept=".pdf" required>
-          <br>
-          <input type="submit" value="アップロード">
 
-      </form>
-
-      <?php
-      if (count($_POST) > 0){
-        $upfile = $_FILES["upfile"]["tmp_name"];
-      	if ($upfile==""){
-      		print("ファイルのアップロードができませんでした。<BR>");
-      		exit;
-	        }
-      }
-          ?>
 
 
 
