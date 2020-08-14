@@ -26,7 +26,15 @@
 
 
     <form action="index2.php"  method="get">
-      <p>OKマーク用フォーム<br><br>氏名
+      <p>OKマーク用フォーム<br><br>
+        「注意事項」<br>
+        ・氏名にはスペースを入れない<br>
+        ・従業員コードは大文字小文字を区別する<br>
+        ・休み希望の時はチェックは指定の箇所のみチェックする<br>
+        ・出勤希望の時はイン時間と上がる時間の2つチェックする<br>
+        (12時から17時まで出勤できる場合：12と17にチェックする)
+
+        <br><br>氏名
       <input type="text" name="Name"><br>従業員コード
       <input type="text" name="Code"><br><br>
       <p>月曜日&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -187,6 +195,7 @@
             //echo $Times[0][1].PHP_EOL;
 
             $YourSche[$day+2]=$Times[$day][0].PHP_EOL."-- ".$Times[$day][1].PHP_EOL;
+            echo $Week[$day]."曜日 ";
             echo $YourSche[$day+2]."<br/>";
             $Message[$day]="";
             $FlagInput=$FlagInput+1;
