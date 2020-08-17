@@ -65,7 +65,7 @@ padding:50px;
  margin-top:-1px;
  overflow:hidden;
  background:#CCFFCC;
- width:700px;
+ width:750px;
  margin-left:auto;margin-right:auto;
 }
 .tab_cnt div{
@@ -74,4 +74,7 @@ padding:50px;
 }
 .tab_cnt div.Active{
  display:block;
+}
+#TableOutput{
+  font-size: 25px;
 }
