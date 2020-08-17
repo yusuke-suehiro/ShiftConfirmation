@@ -75,3 +75,6 @@ padding:50px;
 .tab_cnt div.Active{
  display:block;
 }
+#TableOutput{
+  font-size: 25px;
+}

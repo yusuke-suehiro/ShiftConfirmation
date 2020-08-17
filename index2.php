@@ -20,8 +20,24 @@
     </ul>
     <div class="tab_cnt">
     <div id="tab1_cnt" class="Active">
-    <a href="./file/20200702_suehiro.pdf" download="20200702_suehiro.pdf">PDFファイル</a>
 
+
+    <?php
+    date_default_timezone_set('Asia/Tokyo');
+    $Nowdate=0;
+
+    if (date('w') == 1) {
+      echo date("Y/m/d")." 週<br/>";
+      $Nowdate=date("Ymd");
+
+    }
+    else {
+      echo date("Y/m/d",strtotime('last Monday'))." 週<br/>";
+      $Nowdate=date("Ymd",strtotime('last Monday'));
+
+    }
+
+    ?>
 
 
 
@@ -34,7 +50,7 @@
         ・出勤希望の時はイン時間と上がる時間の2つチェックする<br>
         (12時から17時まで出勤できる場合：12と17にチェックする)
 
-        <br><br>氏名
+        <br><br>氏名&emsp;&emsp;&emsp;&emsp;
       <input type="text" name="Name"><br>従業員コード
       <input type="text" name="Code"><br><br>
       <p>月曜日&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -150,9 +166,10 @@
       <input type="checkbox" name="Times[6][]" value="22">22&emsp;
       <input type="checkbox" name="Times[6][]" value="23">23&emsp;
 
-      <input type="submit" value="送信">
+      <p><input type="submit" value="送信"></p>
     </form>
     <?php
+
     $Times = $_GET["Times"];
     $Holiday = $_GET["holiday"];
     $Name=$_GET["Name"];
@@ -218,8 +235,8 @@
 
       //日程が正しく入力できたら
       if ($FlagInput == 7) {
-            $link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
-          //$link = mysqli_connect('localhost', 'SUEHIRO', '44461016', 'Schedule');
+            //$link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
+          $link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
 
         if (!$link) {
         die("データベースに接続できません:" . mysqli_connect_error() . "\n");
@@ -229,10 +246,27 @@
           echo "データベースの接続に成功しました。\n";
           //$sql="insert into sche20200810 (name, id, mon, tue, wed, thr, fri, sat, sun) values (:name, :id, :mon, :tue, :wed, :thr, :fri, :sat, :sun)";
 
-          $sql="insert into sche20200810 (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-//$sql="insert into sche20200810 (name, id, mon, tue, wed, thr, fri, sat, sun) values ('Sue', 'HF', 'Ok', '', '', 'OK', '', 'OK', '')";
+          if ($TableExist=$link->query("SHOW TABLES LIKE 'Sche".$Nowdate."'")) {
+            if ($TableExist->num_rows) {
+              echo "テーブルあり";
+            }
+            else {
+              echo "テーブルなし";
+              $sql="create table Sche".$Nowdate." (name varchar(20),  id varchar(5), mon varchar(10), tue varchar(10), wed varchar(10), thr varchar(10), fri varchar(10), sat varchar(10), sun varchar(10))";
+              $link->query($sql);
+
+            }
+            $TableExist->close();
+          }
+
+
+
+
+
+          //$sql="insert into sche20200810 (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+          $sql="insert into sche".$Nowdate." (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
           $stmt=$link->prepare($sql);
-        //  $params=array(':name'=> '$YourSche[0]', ':id'=> '$YourSche[1]', ':mon'=> '$YourSche[2]', ':tue'=> '$YourSche[3]', ':wed'=> '$YourSche[4]',':thr'=>'$YourSche[5]' ,':fri'=> '$YourSche[6]', ':sat'=> '$YourSche[7]',':sun'=> '$YourSche[8]');
           $stmt->bind_param("sssssssss",$YourSche[0],$YourSche[1],$YourSche[2],$YourSche[3],$YourSche[4],$YourSche[5],$YourSche[6],$YourSche[7],$YourSche[8]);
 
           $stmt->execute();
@@ -249,6 +283,7 @@
     else {
       if ($Name !==NULL) {
         echo "名前か従業員コードが間違っています";
+
       }
       else if ($Code !==NULL) {
         echo "名前か従業員コードが間違っています";
@@ -265,14 +300,66 @@
 
     <div id="tab2_cnt" class="NonActive">
 
+      <form action="index2.php"  method="get">
+
+      責任者コードを入力してください<input type="text" name="responsibility"></br>
+      <input type="checkbox" name="table" value="10">表を表示する&emsp;
+      <input type="submit" value="送信">
+      </form>
+
+      <?php
+
+      $Table = $_GET["table"];
+      $Response = $_GET["responsibility"];
+      $ResPass="09366390";
+
+      if ($Table !== NULL) {
+        if ($Response == $ResPass) {
+              $link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
+            //$link = mysqli_connect('localhost', 'SUEHIRO', '44461016', 'Schedule');
+
+          if (!$link) {
+          die("データベースに接続できません:" . mysqli_connect_error() . "\n");
+          }
+          else {
+
+            echo "</br>データベースの接続に成功しました．\n";
+
+            //$sql="SELECT * FROM Sche20200810";
+            $sql="SELECT * FROM Sche".$Nowdate;
+
+            $result=$link->query($sql);
+            if (!$result) {
+              echo "データベースからレコードを読めません";
+              exit();
+            }
+            $row_count=$result->num_rows;
+            while($row=$result->fetch_array(MYSQLI_ASSOC)){
+              $rows[]=$row;
+            }
+            $result->free();
+
+            $link->close();
+            echo "レコード件数".$row_count."</br></br>";
+            $space=" ";
+            echo str_pad("Code",6,"*",2)."&nbsp;".str_pad("Name",18,"*",2)."&emsp;".str_pad("Mon",7,"*",2)."&emsp;&nbsp;".str_pad("Tue",7,"*",2)."&emsp;".str_pad("Wed",7,"*",2)."&emsp;".str_pad("Thr",7,"*",2)."&emsp;".str_pad("Fri",7,"*",2)."&emsp;".str_pad("Sat",7,"*",2)."&emsp;".str_pad("Sun",7,"*",2)."</br>";
+            foreach($rows as $row){
+              echo str_pad($row['id'],5,"$space",1)."&nbsp;".str_pad($row['name'],20,"*",2)."&emsp;".str_pad($row['mon'],7,"*",2)."&emsp;".str_pad($row['tue'],7,"*",2)."&emsp;".str_pad($row['wed'],7,"*",2)."&emsp;".str_pad($row['thr'],7,"*",2)."&emsp;".str_pad($row['fri'],7,"*",2)."&emsp;".str_pad($row['sat'],7,"*",2)."&emsp;".str_pad($row['sun'],7,"*",2)."</br>";
+
+            }
+      }
+  }
+  else {
+    $Response="責任者コードが間違っています";
+    echo $Response;
+  }
+
+}
+
+      ?>
 
 
 
-
-
-      <br>
-      <p class="result_output">結果</p>
-      <p class="hint_message"></p>
 
   </div>
 </form>
