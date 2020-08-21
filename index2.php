@@ -27,13 +27,13 @@
     $Nowdate=0;
 
     if (date('w') == 1) {
-      echo date("Y/m/d")." 週<br/>";
-      $Nowdate=date("Ymd");
+      echo date("Y/m/d",strtotime('+2 week Monday'))." 週<br/>";
+      $Nowdate=date("Ymd",strtotime('+2 week Monday'));
 
     }
     else {
-      echo date("Y/m/d",strtotime('last Monday'))." 週<br/>";
-      $Nowdate=date("Ymd",strtotime('last Monday'));
+      echo date("Y/m/d",strtotime('+2 week Monday'))." 週<br/>";
+      $Nowdate=date("Ymd",strtotime('+2 week Monday'));
 
     }
 
@@ -53,7 +53,7 @@
         <br><br>氏名&emsp;&emsp;&emsp;&emsp;
       <input type="text" name="Name"><br>従業員コード
       <input type="text" name="Code"><br><br>
-      <p>月曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p>月曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[0]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[0][]" value="10">10&emsp;
       <input type="checkbox" name="Times[0][]" value="11">11&emsp;
@@ -61,7 +61,7 @@
       <input type="checkbox" name="Times[0][]" value="13">13&emsp;
       <input type="checkbox" name="Times[0][]" value="14">14&emsp;
       <input type="checkbox" name="Times[0][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[0][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[0][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[0][]" value="17">17&emsp;
       <input type="checkbox" name="Times[0][]" value="18">18&emsp;
       <input type="checkbox" name="Times[0][]" value="19">19&emsp;
@@ -69,7 +69,7 @@
       <input type="checkbox" name="Times[0][]" value="21">21&emsp;
       <input type="checkbox" name="Times[0][]" value="22">22&emsp;
       <input type="checkbox" name="Times[0][]" value="23">23&emsp;
-      <p>火曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>火曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[1]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[1][]" value="10">10&emsp;
       <input type="checkbox" name="Times[1][]" value="11">11&emsp;
@@ -77,7 +77,7 @@
       <input type="checkbox" name="Times[1][]" value="13">13&emsp;
       <input type="checkbox" name="Times[1][]" value="14">14&emsp;
       <input type="checkbox" name="Times[1][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[1][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[1][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[1][]" value="17">17&emsp;
       <input type="checkbox" name="Times[1][]" value="18">18&emsp;
       <input type="checkbox" name="Times[1][]" value="19">19&emsp;
@@ -85,7 +85,7 @@
       <input type="checkbox" name="Times[1][]" value="21">21&emsp;
       <input type="checkbox" name="Times[1][]" value="22">22&emsp;
       <input type="checkbox" name="Times[1][]" value="23">23&emsp;
-      <p>水曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>水曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[2]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[2][]" value="10">10&emsp;
       <input type="checkbox" name="Times[2][]" value="11">11&emsp;
@@ -93,7 +93,7 @@
       <input type="checkbox" name="Times[2][]" value="13">13&emsp;
       <input type="checkbox" name="Times[2][]" value="14">14&emsp;
       <input type="checkbox" name="Times[2][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[2][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[2][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[2][]" value="17">17&emsp;
       <input type="checkbox" name="Times[2][]" value="18">18&emsp;
       <input type="checkbox" name="Times[2][]" value="19">19&emsp;
@@ -101,7 +101,7 @@
       <input type="checkbox" name="Times[2][]" value="21">21&emsp;
       <input type="checkbox" name="Times[2][]" value="22">22&emsp;
       <input type="checkbox" name="Times[2][]" value="23">23&emsp;
-      <p>木曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>木曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[3]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[3][]" value="10">10&emsp;
       <input type="checkbox" name="Times[3][]" value="11">11&emsp;
@@ -109,7 +109,7 @@
       <input type="checkbox" name="Times[3][]" value="13">13&emsp;
       <input type="checkbox" name="Times[3][]" value="14">14&emsp;
       <input type="checkbox" name="Times[3][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[3][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[3][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[3][]" value="17">17&emsp;
       <input type="checkbox" name="Times[3][]" value="18">18&emsp;
       <input type="checkbox" name="Times[3][]" value="19">19&emsp;
@@ -117,7 +117,7 @@
       <input type="checkbox" name="Times[3][]" value="21">21&emsp;
       <input type="checkbox" name="Times[3][]" value="22">22&emsp;
       <input type="checkbox" name="Times[3][]" value="23">23&emsp;
-      <p>金曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>金曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[4]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[4][]" value="10">10&emsp;
       <input type="checkbox" name="Times[4][]" value="11">11&emsp;
@@ -125,7 +125,7 @@
       <input type="checkbox" name="Times[4][]" value="13">13&emsp;
       <input type="checkbox" name="Times[4][]" value="14">14&emsp;
       <input type="checkbox" name="Times[4][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[4][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[4][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[4][]" value="17">17&emsp;
       <input type="checkbox" name="Times[4][]" value="18">18&emsp;
       <input type="checkbox" name="Times[4][]" value="19">19&emsp;
@@ -133,7 +133,7 @@
       <input type="checkbox" name="Times[4][]" value="21">21&emsp;
       <input type="checkbox" name="Times[4][]" value="22">22&emsp;
       <input type="checkbox" name="Times[4][]" value="23">23&emsp;
-      <p>土曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>土曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[5]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[5][]" value="10">10&emsp;
       <input type="checkbox" name="Times[5][]" value="11">11&emsp;
@@ -141,7 +141,7 @@
       <input type="checkbox" name="Times[5][]" value="13">13&emsp;
       <input type="checkbox" name="Times[5][]" value="14">14&emsp;
       <input type="checkbox" name="Times[5][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[5][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[5][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[5][]" value="17">17&emsp;
       <input type="checkbox" name="Times[5][]" value="18">18&emsp;
       <input type="checkbox" name="Times[5][]" value="19">19&emsp;
@@ -149,7 +149,7 @@
       <input type="checkbox" name="Times[5][]" value="21">21&emsp;
       <input type="checkbox" name="Times[5][]" value="22">22&emsp;
       <input type="checkbox" name="Times[5][]" value="23">23&emsp;
-      <p>日曜日&emsp;&emsp;&emsp;&emsp;&emsp;
+      <p></br>日曜日&emsp;&emsp;&emsp;
       <input type="checkbox" name="holiday[6]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[6][]" value="10">10&emsp;
       <input type="checkbox" name="Times[6][]" value="11">11&emsp;
@@ -157,7 +157,7 @@
       <input type="checkbox" name="Times[6][]" value="13">13&emsp;
       <input type="checkbox" name="Times[6][]" value="14">14&emsp;
       <input type="checkbox" name="Times[6][]" value="15">15&emsp;
-      <input type="checkbox" name="Times[6][]" value="16">16&emsp;
+      <input type="checkbox" name="Times[6][]" value="16">16&emsp;</br>
       <input type="checkbox" name="Times[6][]" value="17">17&emsp;
       <input type="checkbox" name="Times[6][]" value="18">18&emsp;
       <input type="checkbox" name="Times[6][]" value="19">19&emsp;
@@ -166,7 +166,7 @@
       <input type="checkbox" name="Times[6][]" value="22">22&emsp;
       <input type="checkbox" name="Times[6][]" value="23">23&emsp;
 
-      <p><input type="submit" value="送信"></p>
+      <p></br><input type="submit" value="送信"></br></br>
     </form>
     <?php
 
@@ -235,9 +235,9 @@
 
       //日程が正しく入力できたら
       if ($FlagInput == 7) {
-            //$link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
-          $link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
 
+          //$link = mysqli_connect('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
+          $link = mysqli_connect('mysql1.php.xdomain.ne.jp', 'miosche0936_sue', '44461016sue', 'miosche0936_schedule');
         if (!$link) {
         die("データベースに接続できません:" . mysqli_connect_error() . "\n");
         }
@@ -263,10 +263,11 @@
 
 
 
-          //$sql="insert into sche20200810 (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-          $sql="insert into sche".$Nowdate." (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+          //$sql="insert into Sche20200817 (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+          $sql="insert into Sche".$Nowdate." (name, id, mon, tue, wed, thr, fri, sat, sun) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
           $stmt=$link->prepare($sql);
+
           $stmt->bind_param("sssssssss",$YourSche[0],$YourSche[1],$YourSche[2],$YourSche[3],$YourSche[4],$YourSche[5],$YourSche[6],$YourSche[7],$YourSche[8]);
 
           $stmt->execute();
@@ -294,7 +295,7 @@
 
 
         ?>
-
+</br></br></br></br></br></br>
 
     </div>
 
@@ -315,8 +316,8 @@
 
       if ($Table !== NULL) {
         if ($Response == $ResPass) {
-              $link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
-            //$link = mysqli_connect('localhost', 'SUEHIRO', '44461016', 'Schedule');
+              //$link =new mysqli('suehiroisamuyuunoMacBook-Pro.local', 'SUEHIRO', '44461016', 'Schedule');
+            $link =new mysqli('mysql1.php.xdomain.ne.jp', 'miosche0936_sue', '44461016sue', 'miosche0936_schedule');
 
           if (!$link) {
           die("データベースに接続できません:" . mysqli_connect_error() . "\n");
@@ -325,8 +326,18 @@
 
             echo "</br>データベースの接続に成功しました．\n";
 
+            if (date('w')==1) {
+            $Nowdate=date("Ymd",strtotime('+1 week Monday'));
+            echo date("Y/m/d",strtotime('+1 week Monday'))." 週<br/>";
+}
+            else {
+            echo date("Y/m/d",strtotime('+2 week Monday'))." 週<br/>";
+}
+
+
             //$sql="SELECT * FROM Sche20200810";
             $sql="SELECT * FROM Sche".$Nowdate;
+
 
             $result=$link->query($sql);
             if (!$result) {
@@ -342,9 +353,9 @@
             $link->close();
             echo "レコード件数".$row_count."</br></br>";
             $space=" ";
-            echo str_pad("Code",6,"*",2)."&nbsp;".str_pad("Name",18,"*",2)."&emsp;".str_pad("Mon",7,"*",2)."&emsp;&nbsp;".str_pad("Tue",7,"*",2)."&emsp;".str_pad("Wed",7,"*",2)."&emsp;".str_pad("Thr",7,"*",2)."&emsp;".str_pad("Fri",7,"*",2)."&emsp;".str_pad("Sat",7,"*",2)."&emsp;".str_pad("Sun",7,"*",2)."</br>";
+            echo str_pad("Code",6," ",2)."&nbsp;".str_pad("Name",20," ",2)."</br>".str_pad("Mon",7," ",2)."&nbsp;".str_pad("Tue",7," ",2)."&nbsp;".str_pad("Wed",7," ",2)."&nbsp;".str_pad("Thr",7," ",2)."&nbsp;".str_pad("Fri",7," ",2)."&nbsp;".str_pad("Sat",7," ",2)."&nbsp;".str_pad("Sun",7," ",2)."</br></br>";
             foreach($rows as $row){
-              echo str_pad($row['id'],5,"$space",1)."&nbsp;".str_pad($row['name'],20,"*",2)."&emsp;".str_pad($row['mon'],7,"*",2)."&emsp;".str_pad($row['tue'],7,"*",2)."&emsp;".str_pad($row['wed'],7,"*",2)."&emsp;".str_pad($row['thr'],7,"*",2)."&emsp;".str_pad($row['fri'],7,"*",2)."&emsp;".str_pad($row['sat'],7,"*",2)."&emsp;".str_pad($row['sun'],7,"*",2)."</br>";
+              echo str_pad($row['id'],5,"$space",1)."&nbsp;".str_pad($row['name'],20," ",2)."</br>".str_pad($row['mon'],7," ",2)."&nbsp;".str_pad($row['tue'],7," ",2)."&nbsp;".str_pad($row['wed'],7," ",2)."&nbsp;".str_pad($row['thr'],7," ",2)."&nbsp;".str_pad($row['fri'],7," ",2)."&nbsp;".str_pad($row['sat'],7," ",2)."&nbsp;".str_pad($row['sun'],7," ",2)."</br></br>";
 
             }
       }
