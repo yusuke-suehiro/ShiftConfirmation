@@ -53,7 +53,8 @@
         <br><br>氏名&emsp;&emsp;&emsp;&emsp;
       <input type="text" name="Name"><br>従業員コード
       <input type="text" name="Code"><br><br>
-      <p>月曜日&emsp;&emsp;&emsp;
+      <p>月曜日<br><br>
+      <input type="checkbox" name="NoChange[0]">変更がない時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="holiday[0]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[0][]" value="10">10&emsp;
       <input type="checkbox" name="Times[0][]" value="11">11&emsp;
@@ -69,7 +70,8 @@
       <input type="checkbox" name="Times[0][]" value="21">21&emsp;
       <input type="checkbox" name="Times[0][]" value="22">22&emsp;
       <input type="checkbox" name="Times[0][]" value="23">23&emsp;
-      <p></br>火曜日&emsp;&emsp;&emsp;
+      <p></br>火曜日<br><br>
+      <input type="checkbox" name="NoChange[1]">変更がない時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="holiday[1]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[1][]" value="10">10&emsp;
       <input type="checkbox" name="Times[1][]" value="11">11&emsp;
@@ -85,8 +87,9 @@
       <input type="checkbox" name="Times[1][]" value="21">21&emsp;
       <input type="checkbox" name="Times[1][]" value="22">22&emsp;
       <input type="checkbox" name="Times[1][]" value="23">23&emsp;
-      <p></br>水曜日&emsp;&emsp;&emsp;
-      <input type="checkbox" name="holiday[2]">休み希望の時はこちらにチェックしてください<br><br>
+      <p></br>水曜日<br><br>
+      <input type="checkbox" name="NoChange[2]">変更がない時はこちらにチェックしてください<br><br>
+<input type="checkbox" name="holiday[2]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[2][]" value="10">10&emsp;
       <input type="checkbox" name="Times[2][]" value="11">11&emsp;
       <input type="checkbox" name="Times[2][]" value="12">12&emsp;
@@ -101,8 +104,9 @@
       <input type="checkbox" name="Times[2][]" value="21">21&emsp;
       <input type="checkbox" name="Times[2][]" value="22">22&emsp;
       <input type="checkbox" name="Times[2][]" value="23">23&emsp;
-      <p></br>木曜日&emsp;&emsp;&emsp;
-      <input type="checkbox" name="holiday[3]">休み希望の時はこちらにチェックしてください<br><br>
+      <p></br>木曜日<br><br>
+      <input type="checkbox" name="NoChange[3]">変更がない時はこちらにチェックしてください<br><br>
+<input type="checkbox" name="holiday[3]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[3][]" value="10">10&emsp;
       <input type="checkbox" name="Times[3][]" value="11">11&emsp;
       <input type="checkbox" name="Times[3][]" value="12">12&emsp;
@@ -117,8 +121,9 @@
       <input type="checkbox" name="Times[3][]" value="21">21&emsp;
       <input type="checkbox" name="Times[3][]" value="22">22&emsp;
       <input type="checkbox" name="Times[3][]" value="23">23&emsp;
-      <p></br>金曜日&emsp;&emsp;&emsp;
-      <input type="checkbox" name="holiday[4]">休み希望の時はこちらにチェックしてください<br><br>
+      <p></br>金曜日<br><br>
+      <input type="checkbox" name="NoChange[4]">変更がない時はこちらにチェックしてください<br><br>
+<input type="checkbox" name="holiday[4]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[4][]" value="10">10&emsp;
       <input type="checkbox" name="Times[4][]" value="11">11&emsp;
       <input type="checkbox" name="Times[4][]" value="12">12&emsp;
@@ -133,8 +138,9 @@
       <input type="checkbox" name="Times[4][]" value="21">21&emsp;
       <input type="checkbox" name="Times[4][]" value="22">22&emsp;
       <input type="checkbox" name="Times[4][]" value="23">23&emsp;
-      <p></br>土曜日&emsp;&emsp;&emsp;
-      <input type="checkbox" name="holiday[5]">休み希望の時はこちらにチェックしてください<br><br>
+      <p></br>土曜日<br><br>
+      <input type="checkbox" name="NoChange[5]">変更がない時はこちらにチェックしてください<br><br>
+<input type="checkbox" name="holiday[5]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[5][]" value="10">10&emsp;
       <input type="checkbox" name="Times[5][]" value="11">11&emsp;
       <input type="checkbox" name="Times[5][]" value="12">12&emsp;
@@ -149,8 +155,9 @@
       <input type="checkbox" name="Times[5][]" value="21">21&emsp;
       <input type="checkbox" name="Times[5][]" value="22">22&emsp;
       <input type="checkbox" name="Times[5][]" value="23">23&emsp;
-      <p></br>日曜日&emsp;&emsp;&emsp;
-      <input type="checkbox" name="holiday[6]">休み希望の時はこちらにチェックしてください<br><br>
+      <p></br>日曜日<br><br>
+      <input type="checkbox" name="NoChange[6]">変更がない時はこちらにチェックしてください<br><br>
+<input type="checkbox" name="holiday[6]">休み希望の時はこちらにチェックしてください<br><br>
       <input type="checkbox" name="Times[6][]" value="10">10&emsp;
       <input type="checkbox" name="Times[6][]" value="11">11&emsp;
       <input type="checkbox" name="Times[6][]" value="12">12&emsp;
@@ -174,15 +181,23 @@
     $Holiday = $_GET["holiday"];
     $Name=$_GET["Name"];
     $Code=$_GET["Code"];
+    $Change=$_GET["NoChange"];
     $YourSche =array("Name","id","Mon","Tue","Wed","Thu","Fri","Sat","Sun");
     $Week=array("月","火","水","木","金","土","日");
     $Message=array("","","","","","","");
     $FlagInput=0;
     $FlagName=0;
-    $YourName=array("末廣勇祐","松下海","guest");
-    $YourNameAlpha=array("YusukeSuehiro","UmiMatsushita","guest");
-    $YourCode=array("HF727","EA283","");
-    $RegistNum=3; //登録人数
+//開発用
+    //$YourName=array("末廣勇祐","松下海","guest");
+    //$YourNameAlpha=array("YusukeSuehiro","UmiMatsushita","guest");
+    //$YourCode=array("HF727","EA283","");
+
+    $YourName=array("高野政一","松下海","金子健太","佐藤富江","佐藤奈緒子","水越智子","遠藤綾子","佐藤朝陽","末廣勇祐","安田亜未","村松綾音","後藤優果","杉本真理","坂本美帆","川浦みなみ","大坪遼香","内海利哉","井上真凛","王子萌々夏","近藤まどか","神谷翔斗","吉野大翔","高橋礼香","木下凛子","ヴティリー","粕谷陽希","山崎貴博");
+    $YourNameAlpha=array("Takano","UmiMatsushita","KentaKaneko"
+,"TomieSato","NaokoSato","TomokoMizukoshi","AyakoEndo","AsahiSato","YusukeSuehiro","AmiYasuda","AyaneMuramatsu","YukaGoto","MariSugimoto","MihoSakamoto","MinamiKawaura","HarukaOtsubo","ToshiyaUtsumi","MarinInoue","MomokaOji","MadokaKondo","Kamiyan","YamatoYoshino","AyakaTakahashi","RinkoKinoshita","VuTiLi","HarukiKasuya","TakahiroYamasaki");
+    $YourCode=array("20579","24460","CG494","EC511","C4193","D9087","D9088","FB935","HF727","HA816","HF881","HH688","JG479","JU418","KA403","KG185","KM426","KG597","KM923","KR358","KR753","KR755","KU962","KQ071","LA547","LA204","F9985");
+
+    $RegistNum=27; //登録人数
 
     for ($num=0;$num<$RegistNum;$num++) {
       if ($YourName[$num] == $Name) {
@@ -190,15 +205,31 @@
             $FlagName=1;
             $YourSche[0]=$YourNameAlpha[$num];
             $YourSche[1]=$YourCode[$num];
-            echo $YourSche[0]."<br/>";
+            //echo $YourSche[0]."<br/>";
+            echo $YourName[$num]."<br/>";
             echo $YourSche[1]."<br/>";
         }
       }
     }
 
     //名前の認証が終わったら
-    if ($FlagName ==1) {
+  if ($FlagName ==1) {
     for ($day=0;$day<7;$day++) {
+      if ($Change[$day] !== NULL) {
+      if ($Holiday[$day] !==NULL or $Times[$day][0] !== NULL) {
+$Message[$day]=$Week[$day]."曜日 "."変更なし，休み希望，時間を同時に選択しないでください<br/>";
+}
+else {
+            $YourSche[$day+2]="Non";
+            echo $Week[$day]."曜日 ";
+            //echo $YourSche[$day+2]."<br/>";
+            echo "NoChange<br/>";
+            $Message[$day]="";
+            $FlagInput=$FlagInput+1;
+}
+}
+else {
+
       if ($Holiday[$day] == NULL) {
         if ($Times[$day][2] !== NULL) {
           $Message[$day]=$Week[$day]."曜日 "."３つ以上チェックしないでください<br/>";
@@ -231,7 +262,12 @@
           $FlagInput=$FlagInput+1;
         }
       }
+}
       echo $Message[$day];
+
+
+
+
 
       //日程が正しく入力できたら
       if ($FlagInput == 7) {
